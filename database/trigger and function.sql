@@ -1,3 +1,21 @@
+CREATE FUNCTION COUNT_STUDENT(@id INT)
+RETURNS INT
+AS
+BEGIN
+	DECLARE @result INT;
+	SET @result = 0;
+	IF EXISTS(SELECT CourseID
+					FROM Registration
+					WHERE @id=CourseID)
+		BEGIN
+
+			SET @result =(Select count(*) from Registration where @id=CourseID)
+			RETURN @result
+		END	
+	RETURN CAST('KHONG TIM THAY KHOA HOC' AS INT)
+END
+drop function PassOrFail
+Select dbo.COUNT_STUDENT(550)
 CREATE FUNCTION COUNT_CLASS (@id INT)
 RETURNS INT
 AS
@@ -31,13 +49,13 @@ on Registration
 INSTEAD OF INSERT,DELETE
 AS
 BEGIN
-	IF NOT EXISTS (SELECT Course.ID FROM Course
+	IF (NOT EXISTS (SELECT Course.ID FROM Course
 		JOIN
 		(SELECT CourseID, COUNT(*) AS number_of_students_will_add
 		FROM INSERTED
 		GROUP BY CourseID) AS i
 		ON i.CourseID=Course.ID
-		WHERE NumberOfRemainingSlots >= i.number_of_students_will_add) 
+		WHERE NumberOfRemainingSlots >= i.number_of_students_will_add) AND NOT EXISTS( SELECT * FROM deleted))
 		BEGIN
 			raiserror('FULL Slot Course',16,1);
 			rollback;
