@@ -5,16 +5,16 @@ INSERT INTO Person VALUES (1004, 'Cao Duc Huy', '009202111734', CONVERT(date, '0
 EXEXEC InsertTeacher @FullName='Hoang Cong Dai Hiep',@SSN = '012121313133',@username = 'daihiep',@password ='hiephiep123',@CertID='Master',@Bdate = '01-01-1993',@Address='Quan 1'
 EXEXEC InsertTeacher @FullName='Le Thi Loan',@SSN = '012121232333',@username = 'loanle',@password ='loanle01',@CertID='Master2',@Bdate = '08-09-1994',@Address='Quan 2';
  
-INSERT INTO Person VALUES (2001, 'Nguyen Dang Minh', '056202111222', CONVERT(date, '22-05-2002', 105),'Thu Duc', 'minhcute', '1234', 0, 1, 0, null, null);
-INSERT INTO Person VALUES (2002, 'Phan Quoc Bao', '991201111733', CONVERT(date, '12-03-2001', 105),'Quan 9', 'bao1103', 'ok123zo', 0, 1, 0, null, null);
-INSERT INTO Person VALUES (2003, 'Chu Dinh Chien', '345202111666', CONVERT(date, '26-04-2002', 105),'Binh Duong', 'Chienquatroi', '5678', 0, 1, 0, null, null);
+INSERT INTO Person VALUES (2001, 'Nguyen Dang Minh', '056202111222', CONVERT(date, '22-05-2002', 105),'Thu Duc', 'minhcute', '1234abdc', 0, 1, 0, null, null);
+INSERT INTO Person VALUES (2002, 'Phan Quoc Bao', '991201111733', CONVERT(date, '12-03-2001', 105),'Quan 9', 'bao1103', 'ok123zoko', 0, 1, 0, null, null);
+INSERT INTO Person VALUES (2003, 'Chu Dinh Chien', '345202111666', CONVERT(date, '26-04-2002', 105),'Binh Duong', 'Chienquatroi', 'chien5678', 0, 1, 0, null, null);
 INSERT INTO Person VALUES (2004, 'Duong Van Nghia', '789202111890', CONVERT(date, '27-05-2002', 105),'Dong Nai', 'Nghia123', 'ok123123', 0, 1, 0, null, null);
 EXEXEC InsertStudent @FullName='Le Trong Tan' , @username='Trongtan' , @password='1000Kg', @SSN='098756252535', @Bdate='06-05-2004', @Address='Trai Dat';
 
-INSERT INTO Person VALUES (3001, 'Nguyen Cong Le', '345098123234', CONVERT(date, '05-07-1998', 105),'Quan 9', 'Conlehehe', '123gh', 0, 0, 1, null, 'Quan Ly');
+INSERT INTO Person VALUES (3001, 'Nguyen Cong Le', '345098123234', CONVERT(date, '05-07-1998', 105),'Quan 9', 'Conlehehe', '1234ghjk', 0, 0, 1, null, 'Quan Ly');
 INSERT INTO Person VALUES (3002, 'Tran Thien Ly', '078899111900', CONVERT(date, '26-09-1991', 105),'Quan 7', 'Lydeptrai', 'ghk23788', 0, 0, 1, null, 'Quan Ly');
-INSERT INTO Person VALUES (3003, 'Nguyen Thanh Cong', '006782734234', CONVERT(date, '27-05-1980', 105),'Bien Hoa', 'Cong147', 'ddjd900', 0, 0, 1, null, 'Thu Ngan');
-INSERT INTO Person VALUES (3004, 'Trinh Hai Yen', '900203881290', CONVERT(date, '30-04-1979', 105),'Thu Duc', 'Yendangbay', 'hdj897', 0, 0, 1, null, 'Quan Ly');
+INSERT INTO Person VALUES (3003, 'Nguyen Thanh Cong', '006782734234', CONVERT(date, '27-05-1980', 105),'Bien Hoa', 'Cong147', 'ddjd90032', 0, 0, 1, null, 'Thu Ngan');
+INSERT INTO Person VALUES (3004, 'Trinh Hai Yen', '900203881290', CONVERT(date, '30-04-1979', 105),'Thu Duc', 'Yendangbay', 'hdj89765', 0, 0, 1, null, 'Quan Ly');
 EXEXEC InsertStaff @FullName='Nguyen Cong Ly',@SSN='012346789090', @username='congly', @password='5anhemsieunhan', @Work='Thu Ngan', @Bdate='02-03-1997', @Address='Quan 8';
 
 INSERT INTO Promotion VALUES(0, 'Khong km', 1000, 00, CONVERT(date, '1-1-2015', 105));
