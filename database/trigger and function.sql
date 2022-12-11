@@ -11,7 +11,7 @@ BEGIN
 		IF EXISTS(SELECT ID
 					FROM Person
 					WHERE @id=ID and Person.TeacherFlag != 1)
-		BEGINhttps://github.com/minh-chaudang/asg2-dbs/blob/main/database/trigger%20and%20function.sql
+		BEGIN
 			RETURN 0;
 		END
 	ELSE
