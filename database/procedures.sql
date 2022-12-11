@@ -24,7 +24,7 @@ CREATE PROCEDURE InsertStaff
 AS BEGIN
 	
 	INSERT INTO Person (ID, FullName, SSN, Bdate, Address, username, password, Work, StaffFlag)
-	VALUES ((SELECT COALESCE(Max(ID) + 1, 10001) FROM Person WHERE StaffFlag = 1), 
+	VALUES ((SELECT COALESCE(Max(ID) + 1, 20001) FROM Person WHERE StaffFlag = 1), 
 			@FullName, @SSN, @Bdate, @Address, @username, @password, @Work, 1)
 END
 
@@ -38,6 +38,6 @@ CREATE PROCEDURE InsertStudent
 AS BEGIN
 	
 	INSERT INTO Person (ID, FullName, SSN, Bdate, Address, username, password, StudentFlag)
-	VALUES ((SELECT COALESCE(Max(ID) + 1, 10001) FROM Person WHERE StudentFlag = 1), 
+	VALUES ((SELECT COALESCE(Max(ID) + 1, 30001) FROM Person WHERE StudentFlag = 1), 
 			@FullName, @SSN, @Bdate, @Address, @username, @password, 1)
 END
