@@ -15,10 +15,11 @@ CREATE TABLE Person (
 
 	CertID		VARCHAR(30),
 	Work		VARCHAR(30),
-
+	/*
 	CHECK (TeacherFlag + StudentFlag + StaffFlag = 1),	/* Exactly one bit is True */
 	CHECK (TeacherFlag = 0 OR CertID IS NOT NULL),		/* Teacher must have CertID */
 	CHECK (StaffFlag = 0 OR Work IS NOT NULL)			/* Staff must have a work */
+	*/
 )
 
 CREATE TABLE Promotion(
