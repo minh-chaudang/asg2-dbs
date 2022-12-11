@@ -11,7 +11,7 @@ BEGIN
 		IF EXISTS(SELECT ID
 					FROM Person
 					WHERE @id=ID and Person.TeacherFlag != 1)
-		BEGIN
+		BEGINhttps://github.com/minh-chaudang/asg2-dbs/blob/main/database/trigger%20and%20function.sql
 			RETURN 0;
 		END
 	ELSE
@@ -23,32 +23,8 @@ BEGIN
 		END
 	END
 	RETURN CAST('KHONG TIM THAY GIAO VIEN' AS INT);
-END;CREATE FUNCTION PassOrFail (@id INT)
-RETURNS INT
-AS
-BEGIN
-	DECLARE @result INT;
-	SET @result = 0;
-	IF EXISTS(SELECT ID
-					FROM Person
-					WHERE @id=ID)
-	BEGIN
-		IF EXISTS(SELECT ID
-					FROM Person
-					WHERE @id=ID and Person.TeacherFlag != 1)
-		BEGIN
-			RETURN 0;
-		END
-	ELSE
-		BEGIN
-			SET @result = (SELECT COUNT(TeacherID)
-							FROM Course
-							WHERE @id=TeacherID);
-		RETURN @result;
-		END
-	END
-	RETURN CAST('KHONG TIM THAY GIAO VIEN' AS INT);
-END;
+END;
+
 
 CREATE OR ALTER TRIGGER edit_student
 on Registration
