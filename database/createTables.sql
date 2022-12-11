@@ -96,6 +96,7 @@ CREATE TABLE Course (
 	StartDate	DATE		NOT NULL,
 	EndDate		DATE		NOT NULL,
 	Fee			INT			NOT NULL,
+	NumberOfRemainingSlots  INT			NOT NULL,
 )
 
 CREATE TABLE Work (
